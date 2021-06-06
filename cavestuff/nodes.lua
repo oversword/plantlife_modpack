@@ -106,6 +106,14 @@ minetest.register_node("cavestuff:stalactite_1",{
 		local place = vector.add(base, dir)
 		local above = vector.add(place, dir)
 
+		if not placer then return end
+		local playername = placer:get_player_name()
+		if minetest.is_protected(place, playername)
+		or minetest.is_protected(above, playername) then 
+			minetest.record_protection_violation(place, playername)
+			return
+		end
+
 		if minetest.get_node(base).name == "default:stone"
 		and minetest.get_node(place).name == "air"
 		and minetest.get_node(above).name == "air"
