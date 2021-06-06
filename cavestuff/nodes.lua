@@ -74,6 +74,7 @@ minetest.register_node("cavestuff:desert_pebble_2",{
 })
 
 --Staclactites
+
 minetest.register_node("cavestuff:stalactite_1",{
 	drawtype="nodebox",
 	tiles = {"undergrowth_pebble.png"},
