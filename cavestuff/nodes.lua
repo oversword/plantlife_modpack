@@ -74,16 +74,6 @@ minetest.register_node("cavestuff:desert_pebble_2",{
 })
 
 --Staclactites
-
-function printTable(tab, indent)
-  if not indent then indent = '' end
-  if type(tab) ~= 'table' then return tab end
-  local ret = ''
-  for key,value in pairs(tab) do
-	 ret = ret..'\n'..indent..key  .. ': ' .. printTable(value, indent..'\t') .. '; '
-  end
-  return '{'..ret..'\n'..string.sub(indent,2)..'}'
-end
 minetest.register_node("cavestuff:stalactite_1",{
 	drawtype="nodebox",
 	tiles = {"undergrowth_pebble.png"},
